@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:id="@+id/item_container">
+    
+    <ImageView
+        android:id="@+id/img_item_photo"
+        android:layout_width="300px"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16px">
+        
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            tools:text="Kegiatan Buka Bersama Ramadhan 2022"
+            android:layout_marginBottom="24px"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="75px"
+                android:layout_height="75px"
+                android:src="@drawable/ic_baseline_calendar_month_24_gray" />
+
+            <TextView
+                android:id="@+id/tv_item_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Kamis, 18 Mei 2022"
+                android:paddingLeft="20px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="75px"
+                android:layout_height="75px"
+                android:src="@drawable/ic_baseline_people_24_gray" />
+
+            <TextView
+                android:id="@+id/tv_item_participant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Siswa X RPL 2"
+                android:paddingLeft="20px" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
