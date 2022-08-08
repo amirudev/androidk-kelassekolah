@@ -14,14 +14,18 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Button">
-
-    </style>
-
     <style name="Button.Transparent">
         <item name="color">@color/white</item>
         <item name="alpha">0.0</item>
         <item name="android:outlineProvider">none</item>
+    </style>
+    
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="colorPrimary">?attr/colorPrimary</item>
+        <item name="colorPrimaryDark">?attr/colorPrimaryDark</item>
+        <item name="colorAccent">?attr/colorAccent</item>
+        <item name="android:statusBarColor">?attr/colorAccent</item>
     </style>
 
 </resources>
