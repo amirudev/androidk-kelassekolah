@@ -36,9 +36,9 @@ class UserProfile : AppCompatActivity() {
                 onBackPressed()
                 return true
             }
-            R.id.icGalleryWhite -> {
-                val classGalleryIntent = Intent(this@UserProfile, ClassGallery::class.java)
-                startActivity(classGalleryIntent)
+            R.id.icClassWhite -> {
+                val studentTaskActivity = Intent(this@UserProfile, StudentTaskActivity::class.java)
+                startActivity(studentTaskActivity)
             }
         }
         return super.onOptionsItemSelected(item)

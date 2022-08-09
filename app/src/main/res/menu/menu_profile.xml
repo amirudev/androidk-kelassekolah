@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/icGalleryWhite"
-        android:icon="@drawable/ic_baseline_photo_album_24_white"
-        app:showAsAction="ifRoom"
-        android:title="Album Kelas"/>
+        android:id="@+id/icClassWhite"
+        android:icon="@drawable/ic_baseline_class_24_white"
+        app:showAsAction="always"
+        android:title="Kelas"/>
 
 </menu>

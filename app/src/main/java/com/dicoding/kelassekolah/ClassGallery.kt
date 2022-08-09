@@ -57,19 +57,19 @@ class ClassGallery : AppCompatActivity(), View.OnClickListener {
 
     private fun showRecyclerList() {
         rvEvents.layoutManager = LinearLayoutManager(this)
-        val listEventAdapter = ListEventAdapter(list, this@ClassGallery)
+        val listEventAdapter = ListEventAdapter(list, this)
         rvEvents.adapter = listEventAdapter
     }
 
     private fun showRecyclerGrid() {
         rvEvents.layoutManager = GridLayoutManager(this, 2)
-        val gridEventAdapter = GridEventAdapter(list, this@ClassGallery)
+        val gridEventAdapter = GridEventAdapter(list, this)
         rvEvents.adapter = gridEventAdapter
     }
 
     private fun showRecyclerCardview() {
         rvEvents.layoutManager = LinearLayoutManager(this)
-        val cardViewEventAdapter = CardViewEventAdapter(list, this@ClassGallery)
+        val cardViewEventAdapter = CardViewEventAdapter(list, this)
         rvEvents.adapter = cardViewEventAdapter
     }
 
@@ -96,7 +96,7 @@ class ClassGallery : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.action_button_change_layout -> {
-                Log.d("ClassGallery", "Action Button Change Layout Clicked")
+                Log.d("MainActivity Gallery", "Action Button Change Layout Clicked")
                 setNextIcon()
             }
         }

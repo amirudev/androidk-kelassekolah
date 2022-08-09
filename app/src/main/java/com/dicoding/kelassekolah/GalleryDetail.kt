@@ -1,24 +1,17 @@
 package com.dicoding.kelassekolah
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Drawable
-import android.media.Image
 import android.net.Uri
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
-import android.view.ViewParent
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.graphics.drawable.DrawableCompat
-import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
 
 class GalleryDetail : AppCompatActivity(), View.OnClickListener {
     companion object {
@@ -52,7 +45,7 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gallery_detail)
 
-        var toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -92,15 +85,15 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
         super.onSaveInstanceState(outState)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-
-        when (item.itemId) {
-            androidx.appcompat.R.id.home -> {
-                onBackPressed()
-            }
-        }
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return super.onOptionsItemSelected(item)
+//
+//        when (item.itemId) {
+//            androidx.appcompat.R.id.home -> {
+//                onBackPressed()
+//            }
+//        }
+//    }
 
     private fun setEventFromEventsData(position: Int) {
         event = EventsData.getData(position)
@@ -145,9 +138,9 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
             R.id.btn_email -> {
                 Log.d("GalleryDetail", "E-Mail Button Clicked")
 
-                val sendToIntent: Intent = Intent(Intent.ACTION_SENDTO)
+                val sendToIntent = Intent(Intent.ACTION_SENDTO)
                 sendToIntent.apply {
-                    setData(Uri.parse("mailto:"))
+                    data = Uri.parse("mailto:")
                     putExtra(Intent.EXTRA_EMAIL, "")
                     putExtra(Intent.EXTRA_SUBJECT, "Kelas Sekolah - Galeri Kelas")
                     putExtra(Intent.EXTRA_TEXT, "Nama Aktivtias: ${tvTitle.text}\nTanggal Kegiatan: ${tvDate.text}\nPartisipan: ${tvParticipant.text}\nCatatan: ${tvNote.text}\n Informasi Selengkapnya unduh Kelas Sekolah")
