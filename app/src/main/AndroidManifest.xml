@@ -17,9 +17,6 @@
             android:name=".StudentTaskActivity"
             android:exported="false" />
         <activity
-            android:name=".ClassGallery"
-            android:exported="false" />
-        <activity
             android:name=".UserProfile"
             android:exported="false" />
         <activity

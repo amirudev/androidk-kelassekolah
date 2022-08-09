@@ -170,16 +170,6 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
                     setInflaterGalleryComment(edtName.text.toString().trim(), edtComment.text.toString().trim())
 
                     isCommentAdded = true
-
-//                    val sendToIntent: Intent = Intent(Intent.ACTION_SENDTO)
-//                    sendToIntent.apply {
-//                        setData(Uri.parse("mailto:"))
-//                        putExtra(Intent.EXTRA_EMAIL, "")
-//                        putExtra(Intent.EXTRA_SUBJECT, "Kelas Sekolah - Galeri Kelas")
-//                        putExtra(Intent.EXTRA_TEXT, "Nama Aktivtias: ${tvTitle.text}\nTanggal Kegiatan: ${tvDate.text}\nPartisipan: ${tvParticipant.text}\nCatatan: ${tvNote.text}\n Informasi Selengkapnya unduh Kelas Sekolah")
-//                    }
-//
-//                    startActivity(Intent.createChooser(sendToIntent, "Bagikan Melalui E-Mail"))
                 }
             }
         }
