@@ -1,5 +1,6 @@
 package com.dicoding.kelassekolah
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Drawable
@@ -8,19 +9,22 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toolbar
+import android.view.ViewParent
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.recyclerview.widget.RecyclerView
+import org.w3c.dom.Text
 
 class GalleryDetail : AppCompatActivity(), View.OnClickListener {
     companion object {
         const val EXTRA_INDEX = "extra_index"
+        private const val STATE_COMMENT_NAME = ""
+        private const val STATE_COMMENT_COMMENT = ""
     }
 
     private lateinit var ivPhoto: ImageView
@@ -31,11 +35,18 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnLike: Button
     private lateinit var btnBookmark: Button
     private lateinit var btnEmail: Button
+    private lateinit var edtName: EditText
+    private lateinit var edtComment: EditText
+    private lateinit var btnAddComment: Button
+    private lateinit var containerComment: LinearLayout
+    private lateinit var tvCommentName: TextView
+    private lateinit var tvCommentComment: TextView
 
     private lateinit var event: Event
 
     private var isLiked: Boolean = false
     private var isBookmark: Boolean = false
+    private var isCommentAdded: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,9 +68,28 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
         btnLike = findViewById(R.id.btn_like)
         btnBookmark = findViewById(R.id.btn_bookmark)
         btnEmail = findViewById(R.id.btn_email)
+        edtName = findViewById(R.id.edt_name)
+        edtComment = findViewById(R.id.edt_comment)
+        btnAddComment = findViewById(R.id.btn_add_comment)
+        containerComment = findViewById(R.id.container_comment)
         btnLike.setOnClickListener(this)
         btnBookmark.setOnClickListener(this)
         btnEmail.setOnClickListener(this)
+        btnAddComment.setOnClickListener(this)
+
+        if (savedInstanceState != null) {
+            val resultCommentName = savedInstanceState.getString(STATE_COMMENT_NAME)
+            val resultCommentComment = savedInstanceState.getString(STATE_COMMENT_COMMENT)
+
+            setInflaterGalleryComment(resultCommentName!!, resultCommentComment!!)
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString(STATE_COMMENT_NAME, tvCommentName.text.toString())
+        outState.putString(STATE_COMMENT_COMMENT, tvCommentComment.text.toString())
+
+        super.onSaveInstanceState(outState)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -125,7 +155,50 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
 
                 startActivity(Intent.createChooser(sendToIntent, "Bagikan Melalui E-Mail"))
             }
+
+            R.id.btn_add_comment -> {
+                val inputName = edtName.text.toString().trim()
+                val inputComment = edtComment.text.toString().trim()
+
+                var isAddCommentFieldsEmpty = false
+
+                if (inputName.isEmpty()) {
+                    edtName.setText("Anonim")
+                }
+
+                if (inputComment.isEmpty()) {
+                    edtComment.error = "Komentar tidak boleh kosong"
+                    isAddCommentFieldsEmpty = true
+                }
+
+                if (!isAddCommentFieldsEmpty) {
+                    Toast.makeText(this@GalleryDetail, "Tambahkan komentar berhasil, dalam pengembangan, akan mengirim e-mail ke pengembang", Toast.LENGTH_SHORT).show()
+
+                    setInflaterGalleryComment(edtName.text.toString().trim(), edtComment.text.toString().trim())
+
+                    isCommentAdded = true
+
+//                    val sendToIntent: Intent = Intent(Intent.ACTION_SENDTO)
+//                    sendToIntent.apply {
+//                        setData(Uri.parse("mailto:"))
+//                        putExtra(Intent.EXTRA_EMAIL, "")
+//                        putExtra(Intent.EXTRA_SUBJECT, "Kelas Sekolah - Galeri Kelas")
+//                        putExtra(Intent.EXTRA_TEXT, "Nama Aktivtias: ${tvTitle.text}\nTanggal Kegiatan: ${tvDate.text}\nPartisipan: ${tvParticipant.text}\nCatatan: ${tvNote.text}\n Informasi Selengkapnya unduh Kelas Sekolah")
+//                    }
+//
+//                    startActivity(Intent.createChooser(sendToIntent, "Bagikan Melalui E-Mail"))
+                }
+            }
         }
+    }
+
+    private fun setInflaterGalleryComment(name: String, comment: String) {
+        val view: View = LayoutInflater.from(this@GalleryDetail).inflate(R.layout.item_comment_gallery, containerComment, !isCommentAdded)
+        tvCommentName = view.findViewById(R.id.item_comment_name)
+        tvCommentComment = view.findViewById(R.id.item_comment_comment)
+
+        tvCommentName.text = name
+        tvCommentComment.text = comment
     }
 
     private fun getWrappedDrawable(drawable: Int): Drawable {

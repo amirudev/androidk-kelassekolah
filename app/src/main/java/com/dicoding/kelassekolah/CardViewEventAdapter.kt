@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class CardViewEventAdapter(private val listEvent: ArrayList<Event>, private val packageContext: Context?) : RecyclerView.Adapter<CardViewEventAdapter.CardViewvViewHolder>() {
-    inner class CardViewvViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class CardViewEventAdapter(private val listEvent: ArrayList<Event>, private val packageContext: Context?) : RecyclerView.Adapter<CardViewEventAdapter.CardViewViewHolder>() {
+    inner class CardViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvDate: TextView = itemView.findViewById(R.id.tv_item_date)
@@ -24,12 +24,12 @@ class CardViewEventAdapter(private val listEvent: ArrayList<Event>, private val 
         var btnViewDetail: Button = itemView.findViewById(R.id.btn_view_detail)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewvViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_cardview_gallery, parent, false)
-        return CardViewvViewHolder(view)
+        return CardViewViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CardViewvViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CardViewViewHolder, position: Int) {
         val event = listEvent[position]
 
         Glide.with(holder.itemView.context)
@@ -71,7 +71,7 @@ class CardViewEventAdapter(private val listEvent: ArrayList<Event>, private val 
         return listEvent.size
     }
 
-    private fun updateLikeCount(holder: CardViewvViewHolder) {
+    private fun updateLikeCount(holder: CardViewViewHolder) {
         var likesCount = holder.tvLikes.text.toString().toInt()
         likesCount++
 

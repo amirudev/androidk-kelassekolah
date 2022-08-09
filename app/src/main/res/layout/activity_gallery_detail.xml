@@ -149,6 +149,58 @@
                     android:paddingVertical="16dp"
                     android:theme="@style/Button.Transparent"/>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorPrimary"
+                android:layout_marginVertical="18dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="Komentar"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"/>
+
+            <EditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Komentar"/>
+
+            <EditText
+                android:id="@+id/edt_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:lines="3"
+                android:layout_marginBottom="10dp"/>
+            
+            <Button
+                android:id="@+id/btn_add_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tambahkan Komentar"/>
+            
+            <LinearLayout
+                android:id="@+id/container_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

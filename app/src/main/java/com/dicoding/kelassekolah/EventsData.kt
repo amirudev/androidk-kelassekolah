@@ -2,7 +2,7 @@ package com.dicoding.kelassekolah
 
 object EventsData {
     private val eventNames = arrayOf(
-        "A in X and Y get Z then BCD",
+        "Les Piano",
         "B in X and Y get Z then BCD",
         "C in X and Y get Z then BCD",
         "D in X and Y get Z then BCD"
