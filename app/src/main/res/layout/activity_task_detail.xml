@@ -193,6 +193,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_baseline_access_time_24_gray"
+                        android:gravity="center"
                         android:text="Set Reminder"/>
 
                     <TextView
@@ -200,6 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_baseline_share_24_gray"
+                        android:gravity="center"
                         android:text="Share"/>
                 </LinearLayout>
             </LinearLayout>

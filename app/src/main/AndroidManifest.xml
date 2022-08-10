@@ -23,6 +23,9 @@
             android:name=".GalleryDetail"
             android:exported="false" />
         <activity
+            android:name=".TaskDetail"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
