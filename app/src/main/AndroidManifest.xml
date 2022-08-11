@@ -38,6 +38,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"></activity>
-    </application>
 
+        <meta-data
+            android:name="com.dicoding.kelassekolah.task.notification.default"
+            android:resource="@drawable/ic_launcher_foreground_classroom"/>
+    </application>
 </manifest>

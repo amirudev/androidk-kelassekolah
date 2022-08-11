@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnChangeLayout.setOnClickListener(this)
 
         list.addAll(EventsData.listData)
-        showRecyclerList()
+        showRecyclerCardview()
     }
 
     private fun showRecyclerList() {

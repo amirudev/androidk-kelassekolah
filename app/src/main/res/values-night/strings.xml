@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Kelas Sekolah</string>
     <string name="anda_belum_login_klik_disini_untuk_login">Anda belum login, klik disini untuk login</string>
+    <string name="wahyu_amirulloh">Wahyu Amirulloh</string>
+    <string name="_36_teman_sekelas">36 Teman Sekelas</string>
+    <string name="_3_dari_4_tugas_dikerjakan">3 dari 4 Tugas Dikerjakan</string>
+    <string name="_96_presensi_bulan_ini">96% Presensi Bulan Ini</string>
+    <string name="email">E-Mail</string>
+    <string name="wahyuemail">wahyu77889966@gmail.com</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="wahyunomortelepon">0812-8370-8972</string>
+    <string name="kelas">Kelas</string>
+    <string name="xi_rpl_2">XI RPL 2</string>
+    <string name="name">Name</string>
+    <string name="pemrograman_perangkat_lunak">Pemrograman Perangkat Lunak</string>
+    <string name="bahasa">Bahasa</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="inggris">Inggris</string>
+    <string name="jepang">Jepang</string>
+    <string name="preferensi_aplikasi">Preferensi Aplikasi</string>
+    <string name="notifikasi_tugas">Notifikasi Tugas</string>
 </resources>

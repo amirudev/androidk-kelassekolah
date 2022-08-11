@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">School Class</string>
+    <string name="anda_belum_login_klik_disini_untuk_login">You haven\'t login yet <u>login here</u></string>
+    <string name="wahyu_amirulloh">Wahyu Amirulloh</string>
+    <string name="_36_teman_sekelas">36 Classmates</string>
+    <string name="_3_dari_4_tugas_dikerjakan">3 of 4 Task assigned</string>
+    <string name="_96_presensi_bulan_ini">96% Presence this month</string>
+    <string name="email">E-Mail</string>
+    <string name="wahyuemail">wahyu77889966@gmail.com</string>
+    <string name="nomor_telepon">Phone Number</string>
+    <string name="wahyunomortelepon">0812–8370–8972</string>
+    <string name="kelas">Class</string>
+    <string name="xi_rpl_2">XI CS 2</string>
+    <string name="hobi_spesialisasi">Hobi / Spesialisasi</string>
+    <string name="name">Name</string>
+    <string name="bahasa">Bahasa</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="inggris">Inggris</string>
+    <string name="jepang">Jepang</string>
+    <string name="preferensi_aplikasi">Preferensi Aplikasi</string>
+    <string name="notifikasi_tugas">Notifikasi Tugas</string>
+</resources>

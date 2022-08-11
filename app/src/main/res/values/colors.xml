@@ -8,4 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray_60">#606060</color>
+    <color name="blue_pedulilindungi">#4E9CD8</color>
+    <color name="blue_pedulilindungi_variant">#579BD3</color>
+    <color name="blue_pedulilindungi_secondary">#EAF5fA</color>
+    <color name="blue_pedulilindungi_secondary_variant">#D5F2FE</color>
 </resources>

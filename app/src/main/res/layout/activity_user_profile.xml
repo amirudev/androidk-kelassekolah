@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".UserProfile"
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
@@ -25,88 +25,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="30px">
+            android:padding="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="30px">
+                android:layout_marginBottom="15dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="300px"
-                    android:layout_height="300px"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:src="@drawable/student_male" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginLeft="50px">
+                    android:layout_marginStart="25dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="24dp"
-                        android:text="Wahyu Amirulloh"
-                        android:layout_marginBottom="20px" />
+                        android:textSize="24sp"
+                        android:text="@string/wahyu_amirulloh"
+                        android:layout_marginBottom="10dp" />
 
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="10px">
+                        android:text="@string/_36_teman_sekelas"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        app:drawableStartCompat="@drawable/ic_baseline_people_24_gray"/>
 
-                        <ImageView
-                            android:layout_width="75px"
-                            android:layout_height="75px"
-                            android:src="@drawable/ic_baseline_people_24_gray"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="36 Teman Sekelas"
-                            android:paddingLeft="20px"/>
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="10px">
+                        android:text="@string/_3_dari_4_tugas_dikerjakan"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        app:drawableStartCompat="@drawable/ic_baseline_library_add_check_24_gray"/>
 
-                        <ImageView
-                            android:layout_width="75px"
-                            android:layout_height="75px"
-                            android:src="@drawable/ic_baseline_library_add_check_24_gray" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="3 dari 4 Tugas Dikerjakan"
-                            android:paddingLeft="20px" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:layout_width="75px"
-                            android:layout_height="75px"
-                            android:src="@drawable/ic_baseline_calendar_month_24_gray" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="96% Presensi Bulan Ini"
-                            android:paddingLeft="20px" />
-                    </LinearLayout>
+                        android:text="@string/_96_presensi_bulan_ini"
+                        android:paddingStart="10dp"
+                        app:drawableStartCompat="@drawable/ic_baseline_calendar_month_24_gray"
+                        android:paddingEnd="10dp"/>
                 </LinearLayout>
             </LinearLayout>
             
@@ -114,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="?attr/colorPrimary"
-                android:layout_marginVertical="30px"/>
+                android:layout_marginVertical="15dp"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -125,13 +93,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Name"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/name"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Wahyu Amirulloh"/>
+                        android:text="@string/wahyu_amirulloh"/>
                 </TableRow>
 
                 <TableRow>
@@ -139,13 +107,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="E-Mail"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/email"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="wahyu77889966@gmail.com"/>
+                        android:text="@string/wahyuemail"/>
                 </TableRow>
 
                 <TableRow>
@@ -153,13 +121,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nomor Telepon"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/nomor_telepon"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="0812-8370-8972"/>
+                        android:text="@string/wahyunomortelepon"/>
                 </TableRow>
 
                 <TableRow>
@@ -167,13 +135,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Kelas"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/kelas"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="XI RPL 2"/>
+                        android:text="@string/xi_rpl_2"/>
                 </TableRow>
 
                 <TableRow>
@@ -181,13 +149,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Hobi / Spesialisasi"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/hobi_spesialisasi"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Pemrograman Perangkat Lunak"/>
+                        android:text="@string/pemrograman_perangkat_lunak"/>
                 </TableRow>
             </TableLayout>
 
@@ -195,54 +163,66 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="?attr/colorPrimary"
-                android:layout_marginVertical="30px"/>
+                android:layout_marginVertical="15dp"/>
             
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:text="Bahasa"/>
+                android:textSize="18sp"
+                android:text="@string/bahasa"/>
             
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RadioButton
+                    android:id="@+id/r_indonesian"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:text="Indonesia"/>
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:checked="true"
+                    android:text="@string/indonesia"
+                    android:onClick="onRadioLanguageOptionsClicked"/>
 
                 <RadioButton
+                    android:id="@+id/r_english"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:text="Inggris"/>
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/inggris"
+                    android:onClick="onRadioLanguageOptionsClicked"/>
 
                 <RadioButton
+                    android:id="@+id/r_japanese"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
-                    android:text="Jepang"/>
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/jepang"
+                    android:onClick="onRadioLanguageOptionsClicked"/>
             </RadioGroup>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="?attr/colorPrimary"
-                android:layout_marginVertical="30px"/>
+                android:layout_marginVertical="15dp"/>
             
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:text="Preferensi Aplikasi"/>
+                android:textSize="18sp"
+                android:text="@string/preferensi_aplikasi"/>
 
             <CheckBox
+                android:id="@+id/cb_task_notification"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:text="Notifikasi Tugas"/>
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/notifikasi_tugas"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
