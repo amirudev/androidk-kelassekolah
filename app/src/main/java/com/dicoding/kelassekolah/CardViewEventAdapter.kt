@@ -2,11 +2,11 @@ package com.dicoding.kelassekolah
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -31,6 +31,7 @@ class CardViewEventAdapter(private val listEvent: ArrayList<Event>, private val 
 
     override fun onBindViewHolder(holder: CardViewViewHolder, position: Int) {
         val event = listEvent[position]
+        val contextResources: Resources = Resources.getSystem()
 
         Glide.with(holder.itemView.context)
             .load(event.photo)
@@ -50,14 +51,14 @@ class CardViewEventAdapter(private val listEvent: ArrayList<Event>, private val 
 
         holder.btnShare.setOnClickListener {
             Toast.makeText(holder.itemView.context, "Share", Toast.LENGTH_SHORT).show()
-            val shareIntent: Intent = Intent(Intent.ACTION_SEND)
+            val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.apply {
-                setType("text/plain")
-                putExtra(Intent.EXTRA_SUBJECT, "Galeri Sekolah")
-                putExtra(Intent.EXTRA_TEXT, "Aktivitas ${holder.tvName.text} mendapatkan ${holder.tvLikes.text} likes, download Kelas Sekolah sekarang juga!")
+                type = "text/plain"
+                putExtra(Intent.EXTRA_SUBJECT, contextResources.getString(R.string.school_gallery))
+                putExtra(Intent.EXTRA_TEXT, contextResources.getString(R.string.activity_get_likes_download_class_school, holder.tvName.text, holder.tvLikes.text))
             }
 
-            packageContext?.startActivity(Intent.createChooser(shareIntent, "Bagikan Kelas Sekolah!"))
+            packageContext?.startActivity(Intent.createChooser(shareIntent, contextResources.getString(R.string.share_class_school)))
         }
 
         holder.btnViewDetail.setOnClickListener {

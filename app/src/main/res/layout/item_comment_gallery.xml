@@ -7,22 +7,22 @@
     android:padding="10dp">
     
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="200px"
-        android:layout_height="200px"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/student_male" />
     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="10dp">
+        android:layout_marginStart="10dp">
         
         <TextView
             android:id="@+id/item_comment_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Wahyu Amirulloh"
-            android:textSize="18dp"
+            android:textSize="24sp"
             android:layout_marginBottom="6dp"/>
         
         <TextView
@@ -40,8 +40,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_baseline_reply_24_gray"
-                android:text="Balas"
+                android:drawableStart="@drawable/ic_baseline_reply_24_gray"
+                android:text="@string/reply"
                 android:textColor="@color/gray_60"
                 android:theme="@style/Button.Transparent"/>
         </LinearLayout>

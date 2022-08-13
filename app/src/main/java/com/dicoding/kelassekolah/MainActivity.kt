@@ -77,17 +77,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (btnChangeLayout.text) {
             "Grid" -> {
                 showRecyclerGrid()
-                btnChangeLayout.text = "CardView"
+                btnChangeLayout.text = getString(R.string.cardview)
                 btnChangeLayout.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_view_sidebar_24_gray, 0, 0, 0)
             }
             "CardView" -> {
                 showRecyclerCardview()
-                btnChangeLayout.text = "List"
+                btnChangeLayout.text = getString(R.string.list)
                 btnChangeLayout.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_view_module_24_gray, 0, 0, 0)
             }
             "List" -> {
                 showRecyclerList()
-                btnChangeLayout.text = "Grid"
+                btnChangeLayout.text = getString(R.string.grid)
                 btnChangeLayout.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_view_list_24_gray, 0, 0, 0)
             }
         }

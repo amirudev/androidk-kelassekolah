@@ -5,6 +5,6 @@
         android:id="@+id/icClassWhite"
         android:icon="@drawable/ic_baseline_class_24_white"
         app:showAsAction="always"
-        android:title="Kelas"/>
+        android:title="@string/class_string"/>
 
 </menu>

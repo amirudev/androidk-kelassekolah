@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class ListEventAdapter(private val listEvent: ArrayList<Event>, val packageContext: Context) : RecyclerView.Adapter<ListEventAdapter.ListViewHolder>() {
+class ListEventAdapter(private val listEvent: ArrayList<Event>, private val packageContext: Context) : RecyclerView.Adapter<ListEventAdapter.ListViewHolder>() {
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvDate: TextView = itemView.findViewById(R.id.tv_item_date)
@@ -42,7 +42,7 @@ class ListEventAdapter(private val listEvent: ArrayList<Event>, val packageConte
         holder.itemContainer.setOnClickListener {
             val galleryDetailIntent = Intent(packageContext, GalleryDetail::class.java)
             galleryDetailIntent.putExtra(GalleryDetail.EXTRA_INDEX, position)
-            packageContext?.startActivity(galleryDetailIntent)
+            packageContext.startActivity(galleryDetailIntent)
         }
     }
 

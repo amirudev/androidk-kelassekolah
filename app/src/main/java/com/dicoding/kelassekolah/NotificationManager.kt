@@ -1,21 +1,16 @@
 package com.dicoding.kelassekolah
 
-import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.content.getSystemService
 
 class NotificationManager(val context: Context) {
     private lateinit var notificationChannel: NotificationChannel
 
-    private val channelId = "com.dicoding.kelassekolah.taskreminder"
-    private val description = "Notifikasi Pengingat Tugas"
+    private val channelId = "com.dicoding.kelassekolah.task_reminder"
 
     fun startNotification(notificationTitle: String, notificationText: String) {
         val builder = NotificationCompat.Builder(context, channelId)

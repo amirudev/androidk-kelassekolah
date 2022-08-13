@@ -14,78 +14,55 @@
         
         <ImageView
             android:id="@+id/img_item_photo"
-            android:layout_width="300px"
+            android:layout_width="125dp"
             android:layout_height="match_parent"
             tools:src="@tools:sample/avatars"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/item_cardview_image_on_gallery" />
         
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="15px"
-            android:paddingVertical="10dp">
+            android:layout_margin="10dp">
             
             <TextView
                 android:id="@+id/tv_item_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="21sp"
                 tools:text="Kegiatan Ramadhan 2022"/>
             
             <TextView
                 android:id="@+id/tv_item_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20px"
+                android:layout_marginBottom="10dp"
                 tools:text="16 Juli 2022"/>
             
             <TextView
                 android:id="@+id/tv_item_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20px"
+                android:layout_marginBottom="10dp"
                 tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra mauris sed tortor placerat, vitae tempor justo dictum. In sollicitudin massa et turpis dapibus ornare."/>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_item_participant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical">
-                
-                <ImageView
-                    android:layout_width="80px"
-                    android:layout_height="80px"
-                    android:src="@drawable/ic_baseline_people_24_gray"
-                    android:layout_marginRight="15px"/>
-                
-                <TextView
-                    android:id="@+id/tv_item_participant"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:text="Siswa Siswi XI RPL 2 SMKN 1 GUNUNGPUTRI" />
-            </LinearLayout>
+                tools:text="Siswa Siswi XI RPL 2 SMKN 1 GUNUNGPUTRI"
+                android:drawablePadding="6dp"
+                app:drawableStartCompat="@drawable/ic_baseline_people_24_gray" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_item_likes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="10dp">
+                tools:text="Disukai 15 Orang"
+                android:drawablePadding="6dp"
+                app:drawableStartCompat="@drawable/ic_baseline_favorite_24_gray" />
 
-                <ImageView
-                    android:layout_width="80px"
-                    android:layout_height="80px"
-                    android:src="@drawable/ic_baseline_favorite_24_gray"
-                    android:layout_marginRight="15px"/>
-
-                <TextView
-                    android:id="@+id/tv_item_likes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:text="Disukai 15 Orang" />
-            </LinearLayout>
-            
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,26 +73,35 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_baseline_favorite_24_white"
-                    android:text="Like"
-                    android:layout_marginHorizontal="6dp"/>
+                    app:icon="@drawable/ic_baseline_favorite_24_white"
+                    app:iconGravity="textStart"
+                    app:iconTint="@android:color/white"
+                    android:textColor="@color/white"
+                    android:text="@string/like"
+                    android:layout_marginHorizontal="3dp"
+                    style="?android:attr/button" />
 
                 <Button
                     android:id="@+id/btn_share"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_baseline_share_24_white"
-                    android:layout_marginHorizontal="6dp"
-                    android:text="Share"/>
+                    app:icon="@drawable/ic_baseline_share_24_white"
+                    app:iconGravity="textStart"
+                    app:iconTint="@android:color/white"
+                    android:layout_marginHorizontal="3dp"
+                    android:textColor="@color/white"
+                    android:text="@string/share"
+                    style="?android:attr/button" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/btn_view_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="6dp"
-                android:text="View Detail" />
+                android:layout_marginHorizontal="3dp"
+                android:textColor="@color/white"
+                android:text="@string/view_detail" />
         </LinearLayout>
     </LinearLayout>
 

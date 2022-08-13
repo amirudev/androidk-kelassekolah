@@ -5,5 +5,5 @@
         android:id="@+id/icPersonWhite"
         android:icon="@drawable/ic_baseline_person_24_white"
         app:showAsAction="ifRoom"
-        android:title="Profil"/>
+        android:title="@string/profile"/>
 </menu>

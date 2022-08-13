@@ -97,7 +97,7 @@ object EventsData {
         event.date = eventDates[position]
         event.participant = eventParticipants[position]
         event.detail = eventDetails[position]
-        event.likes = likes[position].toInt()
+        event.likes = likes[position]
         event.photo = eventPhotos[position]
 
         return event

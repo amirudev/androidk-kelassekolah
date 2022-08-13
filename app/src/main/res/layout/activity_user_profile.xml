@@ -35,8 +35,8 @@
                 android:layout_marginBottom="15dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/student_male" />
 
                 <LinearLayout
@@ -48,33 +48,30 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:text="@string/wahyu_amirulloh"
                         android:layout_marginBottom="10dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/_36_teman_sekelas"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
+                        android:text="@string/_36_classmates"
+                        android:drawablePadding="10dp"
                         app:drawableStartCompat="@drawable/ic_baseline_people_24_gray"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/_3_dari_4_tugas_dikerjakan"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
+                        android:text="@string/_3_of_4_task_assigned"
+                        android:drawablePadding="10dp"
                         app:drawableStartCompat="@drawable/ic_baseline_library_add_check_24_gray"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/_96_presensi_bulan_ini"
-                        android:paddingStart="10dp"
-                        app:drawableStartCompat="@drawable/ic_baseline_calendar_month_24_gray"
-                        android:paddingEnd="10dp"/>
+                        android:text="@string/_96_presence_this_month"
+                        android:drawablePadding="10dp"
+                        app:drawableStartCompat="@drawable/ic_baseline_calendar_month_24_gray" />
                 </LinearLayout>
             </LinearLayout>
             
@@ -113,7 +110,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/wahyuemail"/>
+                        android:text="@string/wahyu_email_example"/>
                 </TableRow>
 
                 <TableRow>
@@ -121,13 +118,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/nomor_telepon"
+                        android:text="@string/phone_number"
                         android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/wahyunomortelepon"/>
+                        android:text="@string/wahyu_number_phone_example"/>
                 </TableRow>
 
                 <TableRow>
@@ -135,13 +132,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/kelas"
+                        android:text="@string/class_string"
                         android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/xi_rpl_2"/>
+                        android:text="@string/xi_it_2"/>
                 </TableRow>
 
                 <TableRow>
@@ -149,13 +146,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/hobi_spesialisasi"
+                        android:text="@string/hobby_specialization"
                         android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/pemrograman_perangkat_lunak"/>
+                        android:text="@string/software_engineer"/>
                 </TableRow>
             </TableLayout>
 
@@ -169,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="@string/bahasa"/>
+                android:text="@string/language"/>
             
             <RadioGroup
                 android:layout_width="match_parent"
@@ -191,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/inggris"
+                    android:text="@string/english"
                     android:onClick="onRadioLanguageOptionsClicked"/>
 
                 <RadioButton
@@ -200,7 +197,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/jepang"
+                    android:text="@string/japanese"
                     android:onClick="onRadioLanguageOptionsClicked"/>
             </RadioGroup>
 
@@ -214,7 +211,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="@string/preferensi_aplikasi"/>
+                android:text="@string/app_preferences"/>
 
             <CheckBox
                 android:id="@+id/cb_task_notification"
@@ -222,7 +219,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="@string/notifikasi_tugas"/>
+                android:text="@string/task_notification"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

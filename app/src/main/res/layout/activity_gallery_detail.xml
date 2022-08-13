@@ -22,9 +22,10 @@
         <ImageView
             android:id="@+id/iv_photo"
             android:layout_width="match_parent"
-            android:layout_height="600px"
+            android:layout_height="250dp"
             tools:src="@tools:sample/backgrounds/scenic"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/photo_of_school_activity_on_gallery" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,8 +36,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Informasi Kegiatan"
-                android:textSize="18dp"
+                android:text="@string/activity_information"
+                android:textSize="24sp"
                 android:layout_marginBottom="10dp"/>
 
             <TableLayout
@@ -50,8 +51,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nama Kegiatan"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/activity_name"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:id="@+id/tv_title"
@@ -67,8 +68,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tanggal Kegiatan"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/activity_date"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:id="@+id/tv_date"
@@ -83,8 +84,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Partisipan"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/participant"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:id="@+id/tv_participant"
@@ -100,8 +101,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Catatan"
-                        android:layout_marginRight="10dp"/>
+                        android:text="@string/note"
+                        android:layout_marginEnd="10dp"/>
 
                     <TextView
                         android:id="@+id/tv_note"
@@ -122,10 +123,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ic_baseline_favorite_24_gray"
-                    android:text="Like"
+                    android:text="@string/like"
                     android:textColor="#606060"
                     android:paddingVertical="16dp"
-                    android:theme="@style/Button.Transparent"/>
+                    android:theme="@style/Button.Transparent"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/btn_bookmark"
@@ -133,10 +135,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ic_baseline_bookmark_24_gray"
-                    android:text="Bookmark"
+                    android:text="@string/bookmark"
                     android:textColor="#606060"
                     android:paddingVertical="16dp"
-                    android:theme="@style/Button.Transparent"/>
+                    android:theme="@style/Button.Transparent"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/btn_email"
@@ -144,10 +147,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:drawableTop="@drawable/ic_baseline_email_24_gray"
-                    android:text="E-Mail"
+                    android:text="@string/email"
                     android:textColor="#606060"
                     android:paddingVertical="16dp"
-                    android:theme="@style/Button.Transparent"/>
+                    android:theme="@style/Button.Transparent"
+                    style="?android:attr/buttonBarButtonStyle" />
             </LinearLayout>
 
             <View
@@ -159,26 +163,28 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:text="Komentar"
+                android:textSize="24sp"
+                android:text="@string/comment"
                 android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama Lengkap"/>
+                android:text="@string/full_name"
+                android:labelFor="@id/edt_name"/>
 
             <EditText
                 android:id="@+id/edt_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:importantForAutofill="no"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Komentar"/>
+                android:text="@string/comment"/>
 
             <EditText
                 android:id="@+id/edt_comment"
@@ -186,13 +192,14 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:lines="3"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:importantForAutofill="no" />
             
             <Button
                 android:id="@+id/btn_add_comment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tambahkan Komentar"
+                android:text="@string/add_comment"
                 android:layout_marginBottom="10dp"/>
             
             <LinearLayout

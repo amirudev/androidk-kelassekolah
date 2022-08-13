@@ -31,17 +31,17 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:padding="14px">
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="40px"
-                    android:text="Galeri Kelas"
-                    android:textSize="20dp" />
+                    android:padding="18dp"
+                    android:text="@string/class_gallery"
+                    android:textSize="18sp" />
 
                 <View
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="0px"
                     android:layout_weight="1" />
 
@@ -49,9 +49,9 @@
                     android:id="@+id/action_button_change_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_baseline_view_module_24_gray"
-                    android:padding="40px"
-                    android:text="Grid"
+                    android:drawableStart="@drawable/ic_baseline_view_module_24_gray"
+                    android:padding="18dp"
+                    android:text="@string/grid"
                     android:textColor="@color/gray_60"
                     android:theme="@style/Button.Transparent" />
             </LinearLayout>

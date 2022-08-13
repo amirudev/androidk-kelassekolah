@@ -25,66 +25,74 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="30px">
+            android:padding="12dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24px">
+                android:layout_marginBottom="14dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center_horizontal">
+                    android:gravity="center_horizontal"
+                    android:paddingHorizontal="10dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="300px"
-                        android:layout_height="300px"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:src="@drawable/student_male"
-                        android:layout_marginHorizontal="24px"
-                        android:paddingVertical="30px"/>
+                        android:layout_gravity="center_vertical"
+                        />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="16px"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="0dp"
+                        android:paddingVertical="8dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Wahyu Amirulloh"
-                            android:textSize="18dp"/>
+                            android:text="@string/wahyu_amirulloh"
+                            android:textSize="20sp"
+                            android:layout_marginBottom="6dp"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="XI RPL 2 SMKN 1 GUNUNGPUTRI"
-                            android:paddingBottom="16px"/>
+                            android:text="@string/xi_cs_2_smkn_1_gunungputri"/>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Aktif 2022 - 2024"/>
+                            android:text="@string/active_2022_2024"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:gravity="right"
-                            android:layout_marginTop="30px">
+                            android:gravity="end"
+                            android:layout_marginTop="7dp">
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Presensi"
-                                android:layout_marginRight="14px"/>
+                                android:layout_weight="1"
+                                android:text="@string/presence"
+                                android:layout_marginEnd="3dp"
+                                style="?android:attr/button" />
 
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Bayar Kas"/>
+                                android:layout_weight="1"
+                                android:text="@string/pay_community_charge"
+                                android:layout_marginStart="3dp"
+                                style="?android:attr/button" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -93,23 +101,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:paddingVertical="40px"
-                android:text="Tugas Kelas"/>
+                android:textSize="20sp"
+                android:text="@string/class_task"
+                android:layout_marginBottom="14dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:paddingBottom="20px">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tambah Tugas"
-                    android:layout_gravity="right"/>
-            </LinearLayout>
+                android:text="@string/add_task"
+                android:layout_gravity="end"
+                android:layout_marginBottom="14dp"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_task_item"
@@ -127,22 +128,24 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:layout_width="225px"
+                            android:layout_width="100dp"
                             android:layout_height="match_parent"
                             android:src="@drawable/subject_math"
-                            android:scaleType="fitXY"/>
+                            android:scaleType="fitXY"
+                            android:contentDescription="@string/subject_image_on_activity_students_task" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:padding="16dp">
+                            android:paddingVertical="10dp"
+                            android:paddingHorizontal="16dp">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Matematika XI"
-                                android:textSize="18dp"/>
+                                android:text="@string/mathematics_xi"
+                                android:textSize="20sp"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -168,8 +171,8 @@
                         android:gravity="center_vertical">
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_width="150px"
-                            android:layout_height="150px"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center_vertical"
                             android:src="@drawable/teacher_indonesia" />
 
@@ -178,16 +181,18 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:id="@+id/ll_teacher_information_container"
-                            android:paddingStart="14dp">
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Ms. Hermi Wahyuni"
-                                android:textSize="18dp"
+                                android:textSize="18sp"
                                 android:textFontWeight="700"
                                 android:textColor="@color/white"
-                                android:paddingBottom="10px"/>
+                                android:paddingBottom="6dp"
+                                tools:targetApi="p" />
 
                             <TextView
                                 android:layout_width="match_parent"

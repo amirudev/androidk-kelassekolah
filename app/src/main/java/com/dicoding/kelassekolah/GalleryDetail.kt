@@ -129,7 +129,7 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
                 if (!isBookmark) {
                     setBookmarkBookmarked()
                 } else {
-                    setBookmarkUnbookmarked()
+                    setBookmarkNotBookmarked()
                 }
 
                 isBookmark = !isBookmark
@@ -142,11 +142,11 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
                 sendToIntent.apply {
                     data = Uri.parse("mailto:")
                     putExtra(Intent.EXTRA_EMAIL, "")
-                    putExtra(Intent.EXTRA_SUBJECT, "Kelas Sekolah - Galeri Kelas")
-                    putExtra(Intent.EXTRA_TEXT, "Nama Aktivtias: ${tvTitle.text}\nTanggal Kegiatan: ${tvDate.text}\nPartisipan: ${tvParticipant.text}\nCatatan: ${tvNote.text}\n Informasi Selengkapnya unduh Kelas Sekolah")
+                    putExtra(Intent.EXTRA_SUBJECT, getString(R.string.school_class_class_gallery))
+                    putExtra(Intent.EXTRA_TEXT, getString(R.string.activity_name_activity_date_participant, tvTitle.text, tvDate.text, tvParticipant.text, tvNote.text))
                 }
 
-                startActivity(Intent.createChooser(sendToIntent, "Bagikan Melalui E-Mail"))
+                startActivity(Intent.createChooser(sendToIntent, getString(R.string.share_with_email)))
             }
 
             R.id.btn_add_comment -> {
@@ -156,16 +156,16 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
                 var isAddCommentFieldsEmpty = false
 
                 if (inputName.isEmpty()) {
-                    edtName.setText("Anonim")
+                    edtName.setText(getString(R.string.anonym))
                 }
 
                 if (inputComment.isEmpty()) {
-                    edtComment.error = "Komentar tidak boleh kosong"
+                    edtComment.error = getString(R.string.comment_should_not_empty)
                     isAddCommentFieldsEmpty = true
                 }
 
                 if (!isAddCommentFieldsEmpty) {
-                    Toast.makeText(this@GalleryDetail, "Tambahkan komentar berhasil, dalam pengembangan, akan mengirim e-mail ke pengembang", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@GalleryDetail, getString(R.string.add_comment_success_but_on_development), Toast.LENGTH_SHORT).show()
 
                     setInflaterGalleryComment(edtName.text.toString().trim(), edtComment.text.toString().trim())
 
@@ -211,7 +211,7 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
         btnBookmark.setCompoundDrawablesWithIntrinsicBounds(null, wrappedDrawable, null, null)
     }
 
-    private fun setBookmarkUnbookmarked() {
+    private fun setBookmarkNotBookmarked() {
         val wrappedDrawable: Drawable = getWrappedDrawable(R.drawable.ic_baseline_bookmark_24_gray)
         DrawableCompat.setTint(wrappedDrawable, Color.GRAY)
 

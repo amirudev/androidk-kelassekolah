@@ -12,6 +12,7 @@
         android:layout_height="250dp"
         android:layout_margin="1dp"
         android:scaleType="centerCrop"
-        tools:src="@tools:sample/avatars"/>
+        tools:src="@tools:sample/avatars"
+        android:contentDescription="@string/item_image_on_grid_mode_gallery" />
 
 </LinearLayout>

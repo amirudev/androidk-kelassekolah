@@ -1,6 +1,5 @@
 package com.dicoding.kelassekolah
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -74,13 +73,13 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
                 R.id.cb_task_notification -> {
                     if (checked) {
                         notificationManager.startNotification(
-                            "Notifikasi Tugas",
-                            "Tugas Trigonometri Matematika XI akan habis tenggat waktunya dalam 6 Jam lagi (Contoh)"
+                            getString(R.string.task_notification),
+                            getString(R.string.mathematics_trigonometry_task_xi_deadline)
                         )
                     } else {
                         Toast.makeText(
                             this@UserProfile,
-                            "Notifikasi Tugas tidak akan ditampilkan",
+                            getString(R.string.task_notification_would_not_appear),
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -128,7 +127,7 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
     private fun setAppLanguage(langCode: String) {
         val config = resources.configuration
         val languageToLoad: String = langCode;
-        val locale: Locale = Locale(languageToLoad)
+        val locale = Locale(languageToLoad)
         Locale.setDefault(locale)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {

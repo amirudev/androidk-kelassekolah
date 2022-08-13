@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class GridEventAdapter(val listEvent: ArrayList<Event>, val packageContext: Context) : RecyclerView.Adapter<GridEventAdapter.GridViewHolder>() {
+class GridEventAdapter(private val listEvent: ArrayList<Event>, private val packageContext: Context) : RecyclerView.Adapter<GridEventAdapter.GridViewHolder>() {
     inner class GridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
     }
@@ -30,7 +29,7 @@ class GridEventAdapter(val listEvent: ArrayList<Event>, val packageContext: Cont
         holder.imgPhoto.setOnClickListener {
             val galleryDetailIntent = Intent(packageContext, GalleryDetail::class.java)
             galleryDetailIntent.putExtra(GalleryDetail.EXTRA_INDEX, position)
-            packageContext?.startActivity(galleryDetailIntent)
+            packageContext.startActivity(galleryDetailIntent)
         }
     }
 
