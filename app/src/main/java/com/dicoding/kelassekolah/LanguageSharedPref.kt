@@ -5,12 +5,12 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 
-class LanguageSharedPref(activity: Activity) {
-    val sharedPref: SharedPreferences = activity.getPreferences(Context.MODE_PRIVATE)
+class LanguageSharedPref(context: Context) {
     val prefName: String = "com.dicoding.kelassekolah.languagepref"
+    val sharedPref: SharedPreferences = context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
 
     fun getLanguage(): String {
-        return sharedPref.getString(prefName, "in") ?: "in"
+        return sharedPref.getString(prefName, "en")!!
     }
 
     fun setLanguage(langCode: String) {

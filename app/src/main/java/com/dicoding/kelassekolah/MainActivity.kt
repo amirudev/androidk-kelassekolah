@@ -1,8 +1,11 @@
 package com.dicoding.kelassekolah
 
 import android.content.Intent
+import android.content.SharedPreferences
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -12,19 +15,27 @@ import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var rvEvents: RecyclerView
     private lateinit var btnChangeLayout: Button
     private var list: ArrayList<Event> = arrayListOf()
+    private lateinit var languageSharedPref: LanguageSharedPref
+    private lateinit var appLanguageCode: String
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        languageSharedPref = LanguageSharedPref(applicationContext)
+        appLanguageCode = languageSharedPref.getLanguage()
+        setAppLanguage(appLanguageCode)
+
+        Log.d("MainActivity", appLanguageCode)
+
+        createApp()
 
         rvEvents = findViewById(R.id.rv_events)
         rvEvents.setHasFixedSize(true)
@@ -33,6 +44,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         list.addAll(EventsData.listData)
         showRecyclerCardview()
+    }
+
+    private fun createApp() {
+        setContentView(R.layout.activity_main)
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
     }
 
     private fun showRecyclerList() {
@@ -103,5 +121,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         rvEvents.layoutManager = GridLayoutManager(this, 2)
         val gridEventAdapter = GridEventAdapter(list, this)
         rvEvents.adapter = gridEventAdapter
+    }
+
+    private fun setAppLanguage(langCode: String) {
+        val config = resources.configuration
+        val languageToLoad: String = langCode
+        val locale = Locale(languageToLoad)
+        Locale.setDefault(locale)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            config.setLocale(locale)
+        } else {
+            config.locale = locale
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            createConfigurationContext(config)
+        }
+
+        resources.updateConfiguration(config, resources.displayMetrics)
     }
 }

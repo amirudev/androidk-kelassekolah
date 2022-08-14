@@ -66,4 +66,10 @@
     <string name="item_image_on_list_mode_gallery">Item Image on List Mode Gallery</string>
     <string name="profile">Profil</string>
     <string name="dark_theme">Dark Theme</string>
+    <string name="restart_app">Restart App</string>
+    <string name="language_changing_need_to_restart_app">Language changing need to restart app to see changes</string>
+    <string name="restart">Restart</string>
+    <string name="restarting_app">Restarting App</string>
+    <string name="restart_later">Restart Later</string>
+    <string name="this_app_need_restart">This app need restart to be fully changed</string>
 </resources>

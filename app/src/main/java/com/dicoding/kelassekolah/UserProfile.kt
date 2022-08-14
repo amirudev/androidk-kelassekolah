@@ -1,5 +1,6 @@
 package com.dicoding.kelassekolah
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Build
@@ -12,6 +13,7 @@ import android.widget.CheckBox
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
@@ -28,10 +30,11 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        languageSharedPref = LanguageSharedPref(this)
+        languageSharedPref = LanguageSharedPref(applicationContext)
         appLanguageCode = languageSharedPref.getLanguage()
         setAppLanguage(appLanguageCode)
 
+        createApp()
         radioCheckOnLanguage(appLanguageCode)
 
         checkBoxTaskNotification = findViewById(R.id.cb_task_notification)
@@ -105,32 +108,41 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
 
     fun onRadioLanguageOptionsClicked(view: View) {
         if (view is RadioButton) {
-            val checked: Boolean = view.isChecked
-
-            when (view.id) {
-                R.id.r_indonesian -> {
-                    if (checked) {
-                        setAppLanguage("in")
-
-                        languageSharedPref.setLanguage("in")
-                    }
-                }
-                R.id.r_english -> {
-                    if (checked) {
-                        setAppLanguage("en")
-
-                        languageSharedPref.setLanguage("en")
-                    }
-                }
-                R.id.r_japanese -> {
-                    if (checked) {
-                        setAppLanguage("ja")
-
-                        languageSharedPref.setLanguage("ja")
-                    }
-                }
+            val langCode: String = when (view.id) {
+                R.id.r_indonesian -> "in"
+                R.id.r_english -> "en"
+                R.id.r_japanese -> "ja"
+                else -> "en"
             }
+
+            setAppLanguage(langCode)
+            languageSharedPref.setLanguage(langCode)
+            createApp()
+            radioCheckOnLanguage(langCode)
+
+            dialogConfirmRestartAppOnLanguageChanged()
         }
+    }
+
+    private fun dialogConfirmRestartAppOnLanguageChanged() {
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.restart_app))
+            .setMessage(getString(R.string.language_changing_need_to_restart_app))
+
+            .setPositiveButton(getString(R.string.restart)) {
+                dialog, which ->
+                    Toast.makeText(this, getString(R.string.restarting_app), Toast.LENGTH_SHORT).show()
+                startActivity(
+                    Intent(applicationContext, MainActivity::class.java)
+                )
+                System.exit(0)
+            }
+
+            .setNegativeButton(getString(R.string.restart_later)) {
+                dialog, which -> Toast.makeText(this, getString(R.string.this_app_need_restart), Toast.LENGTH_SHORT).show()
+            }
+
+            .show()
     }
 
     private fun setAppLanguage(langCode: String) {
@@ -150,10 +162,6 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
         }
 
         resources.updateConfiguration(config, resources.displayMetrics)
-
-        createApp()
-
-        radioCheckOnLanguage(langCode)
     }
 
     private fun radioCheckOnLanguage(langCode: String) {

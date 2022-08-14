@@ -65,5 +65,11 @@
     <string name="item_image_on_grid_mode_gallery">グリッドモードギャラリーのアイテム画像</string>
     <string name="item_image_on_list_mode_gallery">リストモードギャラリーのアイテム画像</string>
     <string name="profile">プロフィール</string>
-    <string name="dark_theme">Dark Theme</string>
+    <string name="dark_theme">暗いテーマ</string>
+    <string name="restart_app">アプリを再起動</string>
+    <string name="language_changing_need_to_restart_app">言語の変更を変更するには、アプリを再起動する必要があります</string>
+    <string name="restart">再起動</string>
+    <string name="restarting_app">アプリの再起動</string>
+    <string name="restart_later">後で再起動する</string>
+    <string name="this_app_need_restart">このアプリを完全に変更するには再起動が必要です</string>
 </resources>

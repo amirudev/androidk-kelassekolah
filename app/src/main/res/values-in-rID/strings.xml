@@ -65,5 +65,11 @@
     <string name="item_image_on_grid_mode_gallery">Item Image on Grid Mode Gallery</string>
     <string name="item_image_on_list_mode_gallery">Item Image on List Mode Gallery</string>
     <string name="profile">Profile</string>
-    <string name="dark_theme">Dark Theme</string>
+    <string name="dark_theme">Tema Gelap</string>
+    <string name="restart_app">Mulai Ulang Aplikasi</string>
+    <string name="language_changing_need_to_restart_app">Perubahan bahasa harus memulai ulang aplikasi untuk melihat perbedaan</string>
+    <string name="restart">Mulai Ulang</string>
+    <string name="restarting_app">Memulai Ulang Aplikasi</string>
+    <string name="restart_later">Mulai Ulang Nanti</string>
+    <string name="this_app_need_restart">Aplikasi ini membutuhkan mulai ulang untuk melihat perubahan penuh</string>
 </resources>
