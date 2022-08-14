@@ -32,7 +32,7 @@ class ListEventAdapter(private val listEvent: ArrayList<Event>, private val pack
 
         Glide.with(holder.itemView.context)
             .load(event.photo)
-            .apply(RequestOptions().override(55, 55))
+            .apply(RequestOptions().override(550, 550))
             .into(holder.imgPhoto)
 
         holder.tvName.text = event.name

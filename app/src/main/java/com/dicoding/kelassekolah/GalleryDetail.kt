@@ -15,8 +15,8 @@ import androidx.core.graphics.drawable.DrawableCompat
 class GalleryDetail : AppCompatActivity(), View.OnClickListener {
     companion object {
         const val EXTRA_INDEX = "extra_index"
-        private const val STATE_COMMENT_NAME = ""
-        private const val STATE_COMMENT_COMMENT = ""
+        private const val STATE_COMMENT_NAME = "state_comment_name"
+        private const val STATE_COMMENT_COMMENT = "state_comment_comment"
     }
 
     private lateinit var ivPhoto: ImageView
