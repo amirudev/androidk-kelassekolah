@@ -10,14 +10,16 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.CheckBox
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import java.util.*
 
 class UserProfile : AppCompatActivity(), View.OnClickListener {
     private lateinit var notificationManager: NotificationManager
-
     private lateinit var checkBoxTaskNotification: CheckBox
+    private lateinit var languageSharedPref: LanguageSharedPref
+    private lateinit var appLanguageCode: String
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +31,12 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
         checkBoxTaskNotification.setOnClickListener(this)
 
         notificationManager = NotificationManager(this@UserProfile)
+
+        languageSharedPref = LanguageSharedPref(this)
+        appLanguageCode = languageSharedPref.getLanguage()
+        setAppLanguage(appLanguageCode)
+
+        radioCheckOnLanguage(appLanguageCode)
     }
 
     private fun createApp() {
@@ -97,7 +105,7 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
                     if (checked) {
                         setAppLanguage("in")
 
-                        createApp()
+                        languageSharedPref.setLanguage("in")
                     }
 
                     Log.d("UserProfile", "Language changed, Indonesian")
@@ -107,7 +115,7 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
                     if (checked) {
                         setAppLanguage("en")
 
-                        createApp()
+                        languageSharedPref.setLanguage("en")
                     }
 
                     Log.d("UserProfile", "Language changed, English")
@@ -117,7 +125,7 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
                     if (checked) {
                         setAppLanguage("jp")
 
-                        createApp()
+                        languageSharedPref.setLanguage("jp")
                     }
                 }
             }
@@ -126,7 +134,7 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
 
     private fun setAppLanguage(langCode: String) {
         val config = resources.configuration
-        val languageToLoad: String = langCode;
+        val languageToLoad: String = langCode
         val locale = Locale(languageToLoad)
         Locale.setDefault(locale)
 
@@ -141,6 +149,21 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
         }
 
         resources.updateConfiguration(config, resources.displayMetrics)
+
+        createApp()
+
+        radioCheckOnLanguage(langCode)
+    }
+
+    private fun radioCheckOnLanguage(langCode: String) {
+        val elementId: Int = when (langCode) {
+            "in" -> R.id.r_indonesian
+            "en" -> R.id.r_english
+            "jp" -> R.id.r_japanese
+            else -> R.id.r_indonesian
+        }
+
+        findViewById<RadioGroup>(R.id.rg_language).check(elementId)
     }
 
     override fun onClick(v: View?) {

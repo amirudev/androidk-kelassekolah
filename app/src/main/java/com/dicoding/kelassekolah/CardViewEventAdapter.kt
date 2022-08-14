@@ -31,7 +31,6 @@ class CardViewEventAdapter(private val listEvent: ArrayList<Event>, private val 
 
     override fun onBindViewHolder(holder: CardViewViewHolder, position: Int) {
         val event = listEvent[position]
-        val contextResources: Resources = Resources.getSystem()
 
         Glide.with(holder.itemView.context)
             .load(event.photo)
@@ -54,11 +53,13 @@ class CardViewEventAdapter(private val listEvent: ArrayList<Event>, private val 
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.apply {
                 type = "text/plain"
-                putExtra(Intent.EXTRA_SUBJECT, contextResources.getString(R.string.school_gallery))
-                putExtra(Intent.EXTRA_TEXT, contextResources.getString(R.string.activity_get_likes_download_class_school, holder.tvName.text, holder.tvLikes.text))
+                putExtra(Intent.EXTRA_SUBJECT, packageContext?.getString(R.string.school_gallery))
+                putExtra(Intent.EXTRA_TEXT,
+                    packageContext?.getString(R.string.activity_get_likes_download_class_school, holder.tvName.text, holder.tvLikes.text)
+                )
             }
 
-            packageContext?.startActivity(Intent.createChooser(shareIntent, contextResources.getString(R.string.share_class_school)))
+            packageContext?.startActivity(Intent.createChooser(shareIntent, packageContext?.getString(R.string.share_class_school)))
         }
 
         holder.btnViewDetail.setOnClickListener {

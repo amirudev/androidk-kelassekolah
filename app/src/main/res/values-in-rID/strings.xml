@@ -13,7 +13,7 @@
     <string name="class_string">Kelas</string>
     <string name="xi_it_2">XI RPL 2</string>
     <string name="hobby_specialization">Hobi / Spesialisasi</string>
-    <string name="name">Name</string>
+    <string name="name">Nama</string>
     <string name="software_engineer">Pemrograman Perangkat Lunak</string>
     <string name="language">Bahasa</string>
     <string name="indonesia">Indonesia</string>
@@ -22,7 +22,7 @@
     <string name="app_preferences">Preferensi Aplikasi</string>
     <string name="task_notification">Notifikasi Tugas</string>
     <string name="school_gallery">Galeri Sekolah</string>
-    <string name="activity_get_likes_download_class_school">Aktivitas %1$s mendapatkan %1$i likes, download Kelas Sekolah sekarang juga!"</string>
+    <string name="activity_get_likes_download_class_school">Aktivitas %1$s mendapatkan %2$s likes, download Kelas Sekolah sekarang juga!"</string>
     <string name="share_class_school">Bagikan Kelas Sekolah!</string>
     <string name="anonym">Anonim</string>
     <string name="school_class_class_gallery">Kelas Sekolah - Galeri Kelas</string>
@@ -30,9 +30,9 @@
     <string name="share_with_email">Bagikan Melalui E-Mail</string>
     <string name="comment_should_not_empty">Komentar tidak boleh kosong</string>
     <string name="add_comment_success_but_on_development">Tambahkan komentar berhasil, dalam pengembangan, akan mengirim e-mail ke pengembang</string>
-    <string name="cardview">CardView</string>
-    <string name="list">List</string>
-    <string name="grid">Grid</string>
+    <string name="cardview">Kartu</string>
+    <string name="list">Daftar</string>
+    <string name="grid">Kotak</string>
     <string name="mathematics_trigonometry_task_xi_deadline">Tugas Trigonometri Matematika XI akan habis tenggat waktunya dalam 6 Jam lagi (Contoh)</string>
     <string name="task_notification_would_not_appear">Notifikasi Tugas tidak akan ditampilkan</string>
     <string name="photo_of_school_activity_on_gallery">Photo of School Activity on Gallery</string>
@@ -59,8 +59,8 @@
     <string name="subject_image_on_task_detail">Subject Image on Task Detail</string>
     <string name="_2_hari_lagi">2 Hari Lagi</string>
     <string name="item_cardview_image_on_gallery">Item Cardview Image on Gallery</string>
-    <string name="view_detail">View Detail</string>
-    <string name="share">Share</string>
+    <string name="view_detail">Lihat Selengkapnya</string>
+    <string name="share">Bagikan</string>
     <string name="reply">Balas</string>
     <string name="item_image_on_grid_mode_gallery">Item Image on Grid Mode Gallery</string>
     <string name="item_image_on_list_mode_gallery">Item Image on List Mode Gallery</string>
