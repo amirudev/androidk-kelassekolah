@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
@@ -85,16 +84,6 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
         super.onSaveInstanceState(outState)
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return super.onOptionsItemSelected(item)
-//
-//        when (item.itemId) {
-//            androidx.appcompat.R.id.home -> {
-//                onBackPressed()
-//            }
-//        }
-//    }
-
     private fun setEventFromEventsData(position: Int) {
         event = EventsData.getData(position)
     }
@@ -136,8 +125,6 @@ class GalleryDetail : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.btn_email -> {
-                Log.d("GalleryDetail", "E-Mail Button Clicked")
-
                 val sendToIntent = Intent(Intent.ACTION_SENDTO)
                 sendToIntent.apply {
                     data = Uri.parse("mailto:")

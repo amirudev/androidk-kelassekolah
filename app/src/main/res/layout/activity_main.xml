@@ -49,10 +49,10 @@
                     android:id="@+id/action_button_change_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:drawableStartCompat="@drawable/ic_baseline_view_module_24_gray"
                     android:padding="18dp"
                     android:text="@string/grid"
                     android:textColor="@color/gray_60"
+                    android:drawableLeft="@drawable/ic_baseline_view_module_24_gray"
                     android:theme="@style/Button.Transparent" />
             </LinearLayout>
 

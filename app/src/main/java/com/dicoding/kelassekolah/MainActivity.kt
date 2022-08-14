@@ -1,22 +1,19 @@
 package com.dicoding.kelassekolah
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
-import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var rvEvents: RecyclerView
@@ -32,8 +29,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         languageSharedPref = LanguageSharedPref(applicationContext)
         appLanguageCode = languageSharedPref.getLanguage()
         setAppLanguage(appLanguageCode)
-
-        Log.d("MainActivity", appLanguageCode)
 
         createApp()
 
@@ -85,7 +80,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.action_button_change_layout -> {
-                Log.d("ClassGallery", "Action Button Change Layout Clicked")
                 setNextIcon()
             }
         }

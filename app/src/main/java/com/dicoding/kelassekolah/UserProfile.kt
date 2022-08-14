@@ -1,11 +1,9 @@
 package com.dicoding.kelassekolah
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -18,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import java.util.*
+import kotlin.system.exitProcess
 
 class UserProfile : AppCompatActivity(), View.OnClickListener {
     private lateinit var notificationManager: NotificationManager
@@ -94,16 +93,12 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
                 Toast.LENGTH_SHORT
             ).show()
         }
-
-        Log.d("UserProfile", "Task Notification")
     }
 
     private fun onOptionsDarkMode(view: CheckBox) {
         if (view.isChecked) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-        Log.d("UserProfile", "R DarkMode")
     }
 
     fun onRadioLanguageOptionsClicked(view: View) {
@@ -130,16 +125,16 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
             .setMessage(getString(R.string.language_changing_need_to_restart_app))
 
             .setPositiveButton(getString(R.string.restart)) {
-                dialog, which ->
+                _, _ ->
                     Toast.makeText(this, getString(R.string.restarting_app), Toast.LENGTH_SHORT).show()
                 startActivity(
                     Intent(applicationContext, MainActivity::class.java)
                 )
-                System.exit(0)
+                exitProcess(0)
             }
 
             .setNegativeButton(getString(R.string.restart_later)) {
-                dialog, which -> Toast.makeText(this, getString(R.string.this_app_need_restart), Toast.LENGTH_SHORT).show()
+                    _, _ -> Toast.makeText(this, getString(R.string.this_app_need_restart), Toast.LENGTH_SHORT).show()
             }
 
             .show()
@@ -176,12 +171,6 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun checkCurrentDarkMode() {
-//        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-//            checkBoxDarkTheme.isChecked = true
-//
-//            Log.d("UserProfile","checkBoxDarkTheme true")
-//        }
-
         val currentNightMode = (resources.configuration.uiMode
                 and Configuration.UI_MODE_NIGHT_MASK)
 
@@ -196,8 +185,6 @@ class UserProfile : AppCompatActivity(), View.OnClickListener {
                 checkBoxDarkTheme.isChecked = false
             }
         }
-
-        Log.d("UserProfile", checkBoxDarkTheme.isChecked.toString())
     }
 
     override fun onClick(v: View?) {

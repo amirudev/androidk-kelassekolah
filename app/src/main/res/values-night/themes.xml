@@ -14,5 +14,5 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Button"></style>
+    <style name="Button" />
 </resources>

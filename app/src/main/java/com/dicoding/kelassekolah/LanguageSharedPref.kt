@@ -1,9 +1,7 @@
 package com.dicoding.kelassekolah
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
-import android.util.Log
 
 class LanguageSharedPref(context: Context) {
     val prefName: String = "com.dicoding.kelassekolah.languagepref"
