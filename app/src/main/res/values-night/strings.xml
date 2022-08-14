@@ -30,9 +30,9 @@
     <string name="share_with_email">Bagikan Melalui E-Mail</string>
     <string name="comment_should_not_empty">Komentar tidak boleh kosong</string>
     <string name="add_comment_success_but_on_development">Tambahkan komentar berhasil, dalam pengembangan, akan mengirim e-mail ke pengembang</string>
-    <string name="cardview">Kartu</string>
-    <string name="list">Daftar</string>
-    <string name="grid">Kotak</string>
+    <string name="cardview">CardView</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
     <string name="mathematics_trigonometry_task_xi_deadline">Tugas Trigonometri Matematika XI akan habis tenggat waktunya dalam 6 Jam lagi (Contoh)</string>
     <string name="task_notification_would_not_appear">Notifikasi Tugas tidak akan ditampilkan</string>
     <string name="photo_of_school_activity_on_gallery">Photo of School Activity on Gallery</string>
@@ -65,4 +65,5 @@
     <string name="item_image_on_grid_mode_gallery">Item Image on Grid Mode Gallery</string>
     <string name="item_image_on_list_mode_gallery">Item Image on List Mode Gallery</string>
     <string name="profile">Profile</string>
+    <string name="dark_theme">Dark Theme</string>
 </resources>

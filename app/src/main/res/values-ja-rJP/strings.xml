@@ -30,9 +30,9 @@
     <string name="share_with_email">電子メールで共有</string>
     <string name="comment_should_not_empty">コメント フィールドを空にしないでください</string>
     <string name="add_comment_success_but_on_development">コメントを追加できましたが、アプリは開発中です。コメントは開発者に送信されます</string>
-    <string name="cardview">カードビュー</string>
-    <string name="list">リスト</string>
-    <string name="grid">グリッド</string>
+    <string name="cardview">CardView</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
     <string name="mathematics_trigonometry_task_xi_deadline">数学 XI 三角関数タスクの期限は 6 時間以内です (例)</string>
     <string name="task_notification_would_not_appear">タスク通知は表示されません</string>
     <string name="photo_of_school_activity_on_gallery">ギャラリーの学校活動の写真</string>
@@ -65,4 +65,5 @@
     <string name="item_image_on_grid_mode_gallery">グリッドモードギャラリーのアイテム画像</string>
     <string name="item_image_on_list_mode_gallery">リストモードギャラリーのアイテム画像</string>
     <string name="profile">プロフィール</string>
+    <string name="dark_theme">Dark Theme</string>
 </resources>

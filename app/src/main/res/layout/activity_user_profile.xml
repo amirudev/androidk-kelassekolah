@@ -220,6 +220,14 @@
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:text="@string/task_notification"/>
+
+            <CheckBox
+                android:id="@+id/cb_dark_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/dark_theme"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -83,12 +83,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             "CardView" -> {
                 showRecyclerCardview()
                 btnChangeLayout.text = getString(R.string.list)
-                btnChangeLayout.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_view_module_24_gray, 0, 0, 0)
+                btnChangeLayout.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_view_list_24_gray, 0, 0, 0)
             }
             "List" -> {
                 showRecyclerList()
                 btnChangeLayout.text = getString(R.string.grid)
-                btnChangeLayout.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_view_list_24_gray, 0, 0, 0)
+                btnChangeLayout.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_view_module_24_gray, 0, 0, 0)
             }
         }
     }
